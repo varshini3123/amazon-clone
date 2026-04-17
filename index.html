@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon.in</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- ==================== HEADER/NAVIGATION ==================== -->
+    <header class="header">
+        <!-- Top Navigation Bar -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo -->
+                <a href="#" class="nav-logo">
+                    <span class="logo-text">Amazon</span>
+                    <span class="logo-suffix">.in</span>
+                </a>
+
+                <!-- Delivery Location -->
+                <div class="nav-location">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div class="location-text">
+                        <span class="location-label">Deliver to</span>
+                        <span class="location-value">United States</span>
+                    </div>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="nav-search">
+                    <select class="search-category" id="searchCategory">
+                        <option value="all">All</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="fashion">Fashion</option>
+                        <option value="home">Home & Kitchen</option>
+                        <option value="books">Books</option>
+                        <option value="sports">Sports</option>
+                    </select>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search Amazon.in">
+                    <button class="search-btn" id="searchBtn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="nav-links">
+                    <!-- Language Selector -->
+                    <div class="nav-item nav-language">
+                        <i class="fa-solid fa-globe"></i>
+                        <span>EN</span>
+                        <i class="fa-solid fa-caret-down"></i>
+                    </div>
+
+                    <!-- Sign In -->
+                    <div class="nav-item nav-signin">
+                        <span class="signin-label">Hello, sign in</span>
+                        <span class="signin-value">Account & Lists <i class="fa-solid fa-caret-down"></i></span>
+                    </div>
+
+                    <!-- Returns & Orders -->
+                    <div class="nav-item nav-orders">
+                        <span class="orders-label">Returns</span>
+                        <span class="orders-value">& Orders</span>
+                    </div>
+
+                    <!-- Cart -->
+                    <div class="nav-item nav-cart" id="cartIcon">
+                        <div class="cart-icon-wrapper">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </div>
+                        <span class="cart-text">Cart</span>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Secondary Navigation (Categories) -->
+        <nav class="sub-navbar">
+            <div class="sub-nav-container">
+                <a href="#" class="sub-nav-item">
+                    <i class="fa-solid fa-bars"></i> All
+                </a>
+                <a href="#" class="sub-nav-item">Today's Deals</a>
+                <a href="#" class="sub-nav-item">Customer Service</a>
+                <a href="#" class="sub-nav-item">Registry</a>
+                <a href="#" class="sub-nav-item">Gift Cards</a>
+                <a href="#" class="sub-nav-item">Sell</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ==================== MOBILE MENU ==================== -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <i class="fa-solid fa-user"></i>
+            <span>Hello, Sign in</span>
+            <button class="mobile-menu-close" id="mobileMenuClose">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="mobile-menu-content">
+            <div class="mobile-search">
+                <input type="text" placeholder="Search..." id="mobileSearchInput">
+                <button id="mobileSearchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="#">Today's Deals</a></li>
+                <li><a href="#">Customer Service</a></li>
+                <li><a href="#">Gift Cards</a></li>
+                <li><a href="#">Sell</a></li>
+                <li><a href="#">Electronics</a></li>
+                <li><a href="#">Fashion</a></li>
+                <li><a href="#">Home & Kitchen</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="main-content">
+        <!-- Hero/Banner Section -->
+        <section class="hero-section">
+            <div class="hero-slider" id="heroSlider">
+                <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1600')">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <h1>Shop the Latest Electronics</h1>
+                        <p>Discover amazing deals on gadgets and tech</p>
+                        <a href="#products" class="hero-btn">Shop Now</a>
+                    </div>
+                </div>
+                <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600')">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <h1>Fashion for Everyone</h1>
+                        <p>Explore trending styles and exclusive collections</p>
+                        <a href="#products" class="hero-btn">Explore Fashion</a>
+                    </div>
+                </div>
+                <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600')">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <h1>Home & Kitchen Essentials</h1>
+                        <p>Transform your space with our curated collection</p>
+                        <a href="#products" class="hero-btn">Shop Home</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slider Navigation -->
+            <button class="slider-btn slider-prev" id="sliderPrev">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="slider-btn slider-next" id="sliderNext">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <div class="slider-dots" id="sliderDots"></div>
+        </section>
+
+        <!-- Category Cards Section -->
+        <section class="categories-section">
+            <div class="container">
+                <div class="categories-grid">
+                    <!-- Category Card 1 -->
+                    <div class="category-card" data-category="electronics">
+                        <h3 class="category-title">Electronics</h3>
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=400" alt="Electronics">
+                        </div>
+                        <a href="#products" class="category-link">Shop now</a>
+                    </div>
+
+                    <!-- Category Card 2 -->
+                    <div class="category-card" data-category="fashion">
+                        <h3 class="category-title">Fashion</h3>
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=400" alt="Fashion">
+                        </div>
+                        <a href="#products" class="category-link">Shop now</a>
+                    </div>
+
+                    <!-- Category Card 3 -->
+                    <div class="category-card" data-category="home">
+                        <h3 class="category-title">Home & Kitchen</h3>
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400" alt="Home & Kitchen">
+                        </div>
+                        <a href="#products" class="category-link">Shop now</a>
+                    </div>
+
+                    <!-- Category Card 4 -->
+                    <div class="category-card" data-category="books">
+                        <h3 class="category-title">Books</h3>
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=400" alt="Books">
+                        </div>
+                        <a href="#products" class="category-link">Shop now</a>
+                    </div>
+
+                    <!-- Category Card 5 -->
+                    <div class="category-card" data-category="sports">
+                        <h3 class="category-title">Sports & Outdoors</h3>
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=400" alt="Sports">
+                        </div>
+                        <a href="#products" class="category-link">Shop now</a>
+                    </div>
+
+                    <!-- Category Card 6 -->
+                    <div class="category-card" data-category="beauty">
+                        <h3 class="category-title">Beauty & Personal Care</h3>
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400" alt="Beauty">
+                        </div>
+                        <a href="#products" class="category-link">Shop now</a>
+                    </div>
+
+                    <!-- Category Card 7 -->
+                    <div class="category-card" data-category="toys">
+                        <h3 class="category-title">Toys & Games</h3>
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1558060370-d644479cb6f7?w=400" alt="Toys">
+                        </div>
+                        <a href="#products" class="category-link">Shop now</a>
+                    </div>
+
+                    <!-- Category Card 8 - Sign In Promo -->
+                    <div class="category-card signin-card">
+                        <h3 class="category-title">Sign in for the best experience</h3>
+                        <button class="signin-btn">Sign in securely</button>
+                        <p class="signin-subtext">New customer? <a href="#">Start here</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section class="products-section" id="products">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Products</h2>
+                    <div class="filter-controls">
+                        <select id="categoryFilter" class="filter-select">
+                            <option value="all">All Categories</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="fashion">Fashion</option>
+                            <option value="home">Home & Kitchen</option>
+                            <option value="books">Books</option>
+                            <option value="sports">Sports</option>
+                        </select>
+                        <select id="sortFilter" class="filter-select">
+                            <option value="featured">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Avg. Customer Review</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Products Grid -->
+                <div class="products-grid" id="productsGrid">
+                    <!-- Products will be dynamically inserted here -->
+                </div>
+
+                <!-- No Results Message -->
+                <div class="no-results" id="noResults" style="display: none;">
+                    <i class="fa-solid fa-search"></i>
+                    <h3>No products found</h3>
+                    <p>Try adjusting your search or filter to find what you're looking for.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deal of the Day Section -->
+        <section class="deals-section">
+            <div class="container">
+                <h2 class="section-title">Deal of the Day</h2>
+                <div class="deals-grid">
+                    <div class="deal-card deal-main">
+                        <div class="deal-badge">Up to 40% off</div>
+                        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=600" alt="Smart Watch Deal">
+                        <div class="deal-content">
+                            <h3>Smart Watch Collection</h3>
+                            <p>Limited time offer on premium smartwatches</p>
+                            <div class="deal-timer" id="dealTimer">
+                                <div class="timer-block">
+                                    <span class="timer-value" id="hours">12</span>
+                                    <span class="timer-label">Hours</span>
+                                </div>
+                                <div class="timer-block">
+                                    <span class="timer-value" id="minutes">34</span>
+                                    <span class="timer-label">Min</span>
+                                </div>
+                                <div class="timer-block">
+                                    <span class="timer-value" id="seconds">56</span>
+                                    <span class="timer-label">Sec</span>
+                                </div>
+                            </div>
+                            <a href="#" class="deal-btn">See all deals</a>
+                        </div>
+                    </div>
+                    <div class="deal-card deal-secondary">
+                        <div class="deal-badge">Save 25%</div>
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400" alt="Headphones">
+                        <div class="deal-content">
+                            <h3>Premium Headphones</h3>
+                            <p class="deal-price"><span class="original-price">$199.99</span> $149.99</p>
+                        </div>
+                    </div>
+                    <div class="deal-card deal-secondary">
+                        <div class="deal-badge">Best Seller</div>
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" alt="Watch">
+                        <div class="deal-content">
+                            <h3>Classic Watch</h3>
+                            <p class="deal-price">$89.99</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommendations Section -->
+        <section class="recommendations-section">
+            <div class="container">
+                <h2 class="section-title">Inspired by your browsing history</h2>
+                <div class="scroll-container">
+                    <button class="scroll-btn scroll-left" id="scrollLeft">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <div class="recommendations-scroll" id="recommendationsScroll">
+                        <!-- Will be populated dynamically -->
+                    </div>
+                    <button class="scroll-btn scroll-right" id="scrollRight">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== SHOPPING CART SIDEBAR ==================== -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="cart-close" id="cartClose">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be dynamically inserted here -->
+        </div>
+        <div class="cart-empty" id="cartEmpty">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <p>Your cart is empty</p>
+            <a href="#products" class="continue-shopping" id="continueShopping">Continue Shopping</a>
+        </div>
+        <div class="cart-footer" id="cartFooter">
+            <div class="cart-subtotal">
+                <span>Subtotal:</span>
+                <span class="subtotal-amount" id="subtotalAmount">$0.00</span>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+            <p class="cart-note">Shipping & taxes calculated at checkout</p>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- ==================== TOAST NOTIFICATION ==================== -->
+    <div class="toast" id="toast">
+        <i class="fa-solid fa-check-circle"></i>
+        <span id="toastMessage">Item added to cart</span>
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <!-- Back to Top -->
+        <a href="#" class="back-to-top">Back to top</a>
+
+        <!-- Footer Main -->
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <!-- Column 1 -->
+                    <div class="footer-column">
+                        <h4>Get to Know Us</h4>
+                        <ul>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">About Amazon Clone</a></li>
+                            <li><a href="#">Investor Relations</a></li>
+                            <li><a href="#">Amazon Devices</a></li>
+                            <li><a href="#">Amazon Science</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div class="footer-column">
+                        <h4>Make Money with Us</h4>
+                        <ul>
+                            <li><a href="#">Sell products on Amazon</a></li>
+                            <li><a href="#">Sell on Amazon Business</a></li>
+                            <li><a href="#">Sell apps on Amazon</a></li>
+                            <li><a href="#">Become an Affiliate</a></li>
+                            <li><a href="#">Advertise Your Products</a></li>
+                            <li><a href="#">Self-Publish with Us</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 3 -->
+                    <div class="footer-column">
+                        <h4>Amazon Payment Products</h4>
+                        <ul>
+                            <li><a href="#">Amazon Business Card</a></li>
+                            <li><a href="#">Shop with Points</a></li>
+                            <li><a href="#">Reload Your Balance</a></li>
+                            <li><a href="#">Amazon Currency Converter</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 4 -->
+                    <div class="footer-column">
+                        <h4>Let Us Help You</h4>
+                        <ul>
+                            <li><a href="#">Amazon and COVID-19</a></li>
+                            <li><a href="#">Your Account</a></li>
+                            <li><a href="#">Your Orders</a></li>
+                            <li><a href="#">Shipping Rates & Policies</a></li>
+                            <li><a href="#">Returns & Replacements</a></li>
+                            <li><a href="#">Manage Your Content</a></li>
+                            <li><a href="#">Help</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <a href="#" class="footer-logo">
+                    <span class="logo-text">amazon</span>
+                    <span class="logo-suffix">.in</span>
+                </a>
+                <div class="footer-locale">
+                    <button class="locale-btn">
+                        <i class="fa-solid fa-globe"></i> English
+                    </button>
+                    <button class="locale-btn">
+                        $ USD - U.S. Dollar
+                    </button>
+                    <button class="locale-btn">
+                        <img src="https://flagcdn.com/w20/us.png" alt="US Flag"> United States
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Legal -->
+        <div class="footer-legal">
+            <div class="container">
+                <div class="legal-links">
+                    <a href="#">Conditions of Use</a>
+                    <a href="#">Privacy Notice</a>
+                    <a href="#">Consumer Health Data Privacy Disclosure</a>
+                    <a href="#">Your Ads Privacy Choices</a>
+                </div>
+                <p class="copyright">© 2025 Amazon.in This is a demo project for educational purposes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
